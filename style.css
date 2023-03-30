@@ -14,6 +14,15 @@
     height: 100vh;
     
 }
+.heading{
+    background-color: black;
+    color: white;
+    outline-style:groove;
+    width: 122px;
+    margin: 12px;
+    font-size: 25px;
+
+}
 .dino{
     background-image: url(./image/dino.png);
     background-repeat: no-repeat;
@@ -53,10 +62,16 @@
     text-align: center;
     cursor: pointer;
     margin-top: 1rem;
-    margin-left: 8rem;
+    margin-left: 35rem;
     visibility: hidden;
     font-size:55px;
     font-weight: 500;
+    width: 350px;
+    border: 2px solid red;
+}
+.playAgain:hover{
+    border: 2px solid rgb(137, 216, 11);
+    box-shadow: 20px 45px 15px rgba(0,0,0,0.5);;
 }
 .scoreCount{
     position: absolute;
@@ -99,3 +114,6 @@
     }
     
 }
+
+/* // lighting button */
+
