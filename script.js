@@ -3,6 +3,15 @@ var scoreCount=document.querySelector(".scoreCount");
 var monkey=document.querySelector(".monkey");
 var lion=document.querySelector(".lion");
 var playAgain=document.querySelector(".playAgain");
+var startGame=document.querySelector(".startGame");
+
+
+
+startGame.addEventListener('click',()=>{
+    document.querySelector(".section").remove();
+    document.querySelector(".hide").classList.remove('hide');
+
+})
 
 let score=0;
 let cross=true;
@@ -57,7 +66,8 @@ setInterval(() => {
         lion.classList.remove('lion');
 
         playAgain.addEventListener('click', ()=>{
-           location.reload();
+            location.reload();
+             
         })
         audioGo.play();
         setTimeout(() => {
