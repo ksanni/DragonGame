@@ -1,7 +1,7 @@
 var gameOver=document.querySelector(".gameOver");
 var scoreCount=document.querySelector(".scoreCount");
-var dino=document.querySelector(".dino");
-var dragon=document.querySelector(".dragon");
+var monkey=document.querySelector(".monkey");
+var lion=document.querySelector(".lion");
 var playAgain=document.querySelector(".playAgain");
 
 let score=0;
@@ -16,31 +16,33 @@ setTimeout(() => {
 
 
 document.addEventListener("keydown", (e)=>{
+  
     if(e.key==="ArrowUp"){
         console.log(e);
-        dino.classList.add('animateDino');
+        monkey.classList.add('animateMonkey');
         setTimeout(() => {
-        dino.classList.remove('animateDino')
+        monkey.classList.remove('animateMonkey')
         }, 700);
     }
     if(e.key==="ArrowRight"){
-       let dinoX=parseInt(window.getComputedStyle(dino,null).getPropertyValue('left'));
-        dino.style.left= dinoX+75+"px";
+       let monkeyX=parseInt(window.getComputedStyle(monkey,null).getPropertyValue('left'));
+        monkey.style.left= monkeyX+75+"px";
     }
     if(e.key==="ArrowLeft"){
-        let dinoX=parseInt(window.getComputedStyle(dino,null).getPropertyValue('left'));
-        dino.style.left=(dinoX-112)+"px";
+        let monkeyX=parseInt(window.getComputedStyle(monkey,null).getPropertyValue('left'));
+        monkey.style.left=(monkeyX-112)+"px";
     }
+
 });
 
 
  //game over
 setInterval(() => {
-    let dx= parseInt(window.getComputedStyle(dino,null).getPropertyValue('left'));
-    let dy= parseInt(window.getComputedStyle(dino,null).getPropertyValue('top'));
+    let dx= parseInt(window.getComputedStyle(monkey,null).getPropertyValue('left'));
+    let dy= parseInt(window.getComputedStyle(monkey,null).getPropertyValue('top'));
     
-    let ox= parseInt(window.getComputedStyle(dragon,null).getPropertyValue('left'));
-    let oy= parseInt(window.getComputedStyle(dragon,null).getPropertyValue('top'));
+    let ox= parseInt(window.getComputedStyle(lion,null).getPropertyValue('left'));
+    let oy= parseInt(window.getComputedStyle(lion,null).getPropertyValue('top'));
 
     let offsetX= Math.abs(dx-ox);
     let offsetY= Math.abs(dy-oy);
@@ -49,8 +51,10 @@ setInterval(() => {
     if(offsetX<73 && offsetY<52){
         gameOver.style.visibility='visible';
         playAgain.style.visibility='visible';
-        dragon.classList.remove('animateDrago');
-        dino.classList.remove('dino');
+        document.querySelector(".img3").style.visibility='visible';
+        lion.classList.remove('animateLion');
+        monkey.classList.remove('monkey');
+        lion.classList.remove('lion');
 
         playAgain.addEventListener('click', ()=>{
            location.reload();
@@ -71,11 +75,12 @@ setInterval(() => {
 
         // speed increase
         setTimeout(() => {
-            let aniDur=parseFloat(window.getComputedStyle(dragon,null).getPropertyValue('animation-duration'));
-            let newDur= aniDur - .1;
-            dragon.style.animationDuration= newDur + 's';
-            if(newDur<=4){
-                dragon.style.animationDuration= 4 + 's';
+            let aniDur=parseFloat(window.getComputedStyle(lion,null).getPropertyValue('animation-duration'));
+            let newDur= aniDur - .3;
+            console.log("num"+ newDur);
+            lion.style.animationDuration= newDur + 's';
+            if(newDur<=5){
+                lion.style.animationDuration= 5 + 's';
             }
         }, 500);
     }

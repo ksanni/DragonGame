@@ -7,7 +7,7 @@
     overflow: hidden;
 }
 .gameContainer{
-    background-image: url(./image/backgd.jpg);
+    background-image: url(./image/123.jpg);
     background-repeat: no-repeat;
     background-size:100vw 100vh;
     width: 100%;
@@ -18,50 +18,110 @@
     background-color: black;
     color: white;
     outline-style:groove;
-    width: 122px;
+    width: 142px;
     margin: 12px;
+    padding-left: 4px;
     font-size: 25px;
 
 }
-.dino{
-    background-image: url(./image/dino.png);
+.img1{
+    background-image: url(./image/giphy\ \(1\).gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 112px;
+    width: 133px;
+    position: absolute;
+    top:12px;
+    animation: bird1 10s linear infinite ;
+}
+@keyframes bird1{
+    0%{
+        right: 100vw;
+    }10%{
+        top: 10vh;
+    }50%{
+        top: 1vh;
+    }80%{
+        top:10vh;
+    }
+    100%{
+        right:-1vw;
+    }
+}
+.img2{
+    background-image: url(./image/giphy.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 112px;
+    width: 133px;
+    position: absolute;
+    transform: scaleX(-1);
+    animation: bird2 15s linear infinite ;
+}
+.img3{
+    background-image:url(./image/parrot1.png);
+    width: 120px;
+    height: 112px;
+    position: relative;
+    left: 64vw;
+    top: 5.2rem;
+    visibility: hidden;
+    background-repeat: no-repeat;
+    background-size:cover ;
+}
+@keyframes bird2{
+    0%{
+        left: 100vw;
+    }
+10%{
+    top: 10vh;
+}50%{
+    top: 1vh;
+}80%{
+    top:10vh;
+}
+    100%{
+        left:-1vw;
+    }
+}
+
+.monkey{
+    background-image: url(./image/12.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 142px;
-    width:295px;
+    width:140px;
     position: absolute;
-    bottom: 0;
+    bottom:19vh;
     left: 15vw;
     transition-property: left;
     transition-duration: 0.3s;
 
 }
-.dragon{
-    background-image: url(./image/dragon.png);
+.lion{
+    background-image: url(./image/0.png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 122px;
-    width: 205px;
+    height: 162px;
+    width: 305px;
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 16vh;
 
 }
 .gameOver{
-    color:#efbf12d9;
+    color:#2b2f32d9;
     text-align: center;
     visibility: hidden;
-    margin-top: 11rem;
-    margin-left: 8rem;
+    margin-left: 7rem;
     font-size:75px;
     font-weight: 700;
     
 }
 .playAgain{
-    color:#efbf12d9;
+    color:#2b2f32d9;
     text-align: center;
     cursor: pointer;
-    margin-top: 1rem;
     margin-left: 35rem;
     visibility: hidden;
     font-size:55px;
@@ -70,7 +130,7 @@
     border: 2px solid red;
 }
 .playAgain:hover{
-    border: 2px solid rgb(137, 216, 11);
+    border: 2px solid rgba(51, 51, 50, 0.5);
     box-shadow: 20px 45px 15px rgba(0,0,0,0.5);;
 }
 .scoreCount{
@@ -83,29 +143,30 @@
     background-color: rgb(248, 232, 232);
 
 }
-.animateDino{
-    animation: dino 0.9s  linear ;
+
+.animateMonkey{
+    animation: monkey 0.9s  linear ;
 
 }
-@keyframes dino {
+@keyframes monkey {
     0%{
-        bottom: 0;
-
+        bottom: 19vh;
+       
     }
     50%{
         bottom: 422px;
         
     }
     100%{
-        bottom:0;
+        bottom:19vh;
         /* left: 121px; */
     }
 
 }
-.animateDrago{
-    animation: drago 10s linear infinite;
+.animateLion{
+    animation: lion 10s linear infinite;
 }
-@keyframes drago {
+@keyframes lion {
     0%{
         left: 100vw;
     }
